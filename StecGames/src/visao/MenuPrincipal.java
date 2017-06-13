@@ -28,68 +28,75 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btNewCamp = new javax.swing.JButton();
+        btNewPraca = new javax.swing.JButton();
+        btEdtExcCamp = new javax.swing.JButton();
+        btEdtExcPracas = new javax.swing.JButton();
+        btFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Marketing");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Marketing");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 13, -1, -1));
 
-        jButton1.setText("<html>Cadastrar novas <br>Campanhas</html>");
+        btNewCamp.setText("<html>Cadastrar novas <br>Campanhas</html>");
+        btNewCamp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNewCampActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btNewCamp, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 58, -1, 55));
 
-        jButton2.setText("<html>Cadastrar novas <br>praças</html>");
+        btNewPraca.setText("<html>Cadastrar novas <br>praças</html>");
+        btNewPraca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNewPracaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btNewPraca, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 58, -1, 55));
 
-        jButton3.setText("<html>Editar/excluir Campanhas</html>");
+        btEdtExcCamp.setText("<html>Editar/excluir Campanhas</html>");
+        btEdtExcCamp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEdtExcCampActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btEdtExcCamp, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 120, 125, 50));
 
-        jButton4.setText("<html>Editar/excluir Praças</html>");
+        btEdtExcPracas.setText("<html>Editar/excluir Praças</html>");
+        btEdtExcPracas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEdtExcPracasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btEdtExcPracas, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 120, 125, 50));
 
-        jButton5.setText("<html>fechar</html>");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
+        btFechar.setText("<html>fechar</html>");
+        getContentPane().add(btFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 208, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btNewCampActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNewCampActionPerformed
+     CadastroCampanhas frame = new CadastroCampanhas(); frame.setVisible(true);   // TODO add your handling code here:
+    }//GEN-LAST:event_btNewCampActionPerformed
+
+    private void btNewPracaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNewPracaActionPerformed
+     CadastroPracas frame = new CadastroPracas(); frame.setVisible(true);   // TODO add your handling code here:
+
+    }//GEN-LAST:event_btNewPracaActionPerformed
+
+    private void btEdtExcCampActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEdtExcCampActionPerformed
+     EditarCampanhas frame = new EditarCampanhas(); frame.setVisible(true);   // TODO add your handling code here:
+
+    }//GEN-LAST:event_btEdtExcCampActionPerformed
+
+    private void btEdtExcPracasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEdtExcPracasActionPerformed
+     EditarPracas frame = new EditarPracas(); frame.setVisible(true);   // TODO add your handling code here:
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btEdtExcPracasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,11 +134,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btEdtExcCamp;
+    private javax.swing.JButton btEdtExcPracas;
+    private javax.swing.JButton btFechar;
+    private javax.swing.JButton btNewCamp;
+    private javax.swing.JButton btNewPraca;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
