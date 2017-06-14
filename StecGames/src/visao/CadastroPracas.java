@@ -5,23 +5,27 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fulvio
  */
 public class CadastroPracas extends javax.swing.JFrame {
 
-    private CadastroPracas enviado; 
+  
             
             
     public CadastroPracas() {
         initComponents();
+        
+        setLocationRelativeTo(null);
+        jLabelMsgObrigatotioNome.setVisible(false);
+        jLabelMsgObrigatotioMedia.setVisible(false);
+        
     }
 
-     public void enviar(CadastroCampanhas enviado, String nome){
-      txtMedia.setText(nome);    
-          
-     }
+     
      
      
      
@@ -29,46 +33,89 @@ public class CadastroPracas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         txtMedia = new javax.swing.JTextField();
         ComboBoxTipo = new javax.swing.JComboBox<>();
         btSalvar = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabelMsgObrigatotioMedia = new javax.swing.JLabel();
+        jLabelMsgObrigatotioNome = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+
+        jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Praças");
 
         jLabel1.setText("Cadastro Praças");
 
-        jLabel2.setText("Nome");
+        jLabel2.setText("<html>Nome<font color=\"red\">*</font>");
 
         jLabel3.setText("Tipo");
-
-        jLabel4.setText("Media valor diaria");
 
         txtMedia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMediaActionPerformed(evt);
             }
         });
+        txtMedia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtMediaKeyReleased(evt);
+            }
+        });
 
         ComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "selecione", "Digital (imagem)", "Digital (video)", "Televisivo", "Audio", "Impresso" }));
 
         btSalvar.setText("Salvar");
+        btSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalvarActionPerformed(evt);
+            }
+        });
 
         btLimpar.setText("Limpar");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimparActionPerformed(evt);
+            }
+        });
 
         btVoltar.setText("Voltar");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel6.setText("* Campos Obrigatórios");
+
+        jLabelMsgObrigatotioMedia.setForeground(new java.awt.Color(255, 0, 0));
+        jLabelMsgObrigatotioMedia.setText("Campo Obrigatório");
+
+        jLabelMsgObrigatotioNome.setForeground(new java.awt.Color(255, 0, 0));
+        jLabelMsgObrigatotioNome.setText("Campo Obrigatório");
+
+        jLabel7.setText("<html>Valor Media Diaria<font color=\"red\">*</font>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btSalvar)
+                .addGap(65, 65, 65)
+                .addComponent(btLimpar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btVoltar)
+                .addGap(32, 32, 32))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -78,7 +125,7 @@ public class CadastroPracas extends javax.swing.JFrame {
                         .addComponent(ComboBoxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(168, 168, 168)
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
@@ -86,21 +133,20 @@ public class CadastroPracas extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel4)))
-                .addContainerGap(65, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel6))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jLabelMsgObrigatotioMedia))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btSalvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btLimpar)
-                        .addGap(67, 67, 67)
-                        .addComponent(btVoltar)))
-                .addGap(45, 45, 45))
+                        .addContainerGap()
+                        .addComponent(txtMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelMsgObrigatotioNome))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,22 +155,28 @@ public class CadastroPracas extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComboBoxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelMsgObrigatotioNome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtMedia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelMsgObrigatotioMedia)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvar)
                     .addComponent(btLimpar)
                     .addComponent(btVoltar))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addContainerGap())
         );
 
         pack();
@@ -135,6 +187,51 @@ public class CadastroPracas extends javax.swing.JFrame {
      
         
     }//GEN-LAST:event_txtMediaActionPerformed
+
+    private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+         if (txtNome.getText().length()>0) {
+            jLabelMsgObrigatotioNome.setVisible(false);
+        } else {
+             jLabelMsgObrigatotioNome.setVisible(true);
+        }
+         if(txtMedia.getText().length()>0){
+            jLabelMsgObrigatotioMedia.setVisible(false);
+         } else {
+            jLabelMsgObrigatotioMedia.setVisible(true);    
+        }
+          if ((txtNome.getText().length()>0)
+                &&(txtMedia.getText().length()> 0)){
+               JOptionPane.showMessageDialog(null, "Dados Validados !!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Preencha os campos Obrigatórios !!");
+              
+          }
+          
+           /*
+         if (txtNome.getText().length()>5) {
+           JOptionPane.showMessageDialog(rootPane,"Esse Campo não pode conter mais de 5 caracteres!");
+         } else if (txtPeriodo.getText().length() > 5){
+           JOptionPane.showMessageDialog(rootPane,"Esse Campo não pode conter mais de 5 caracteres!");  
+         } else if (txtLink.getText().length()>5){
+           JOptionPane.showMessageDialog(rootPane,"Esse Campo não pode conter mais de 5 caracteres!");     
+         }
+         */
+    }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
+           txtNome.setText("");
+           txtMedia.setText("");
+           
+    }//GEN-LAST:event_btLimparActionPerformed
+
+    private void txtMediaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMediaKeyReleased
+      
+        txtMedia.setText(txtMedia.getText().replaceAll("[^0-9]",""));
+    }//GEN-LAST:event_txtMediaKeyReleased
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+  this.dispose();
+    }//GEN-LAST:event_btVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +279,11 @@ public class CadastroPracas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabelMsgObrigatotioMedia;
+    private javax.swing.JLabel jLabelMsgObrigatotioNome;
     private javax.swing.JTextField txtMedia;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables

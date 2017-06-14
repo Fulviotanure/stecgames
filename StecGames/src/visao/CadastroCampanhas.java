@@ -20,13 +20,15 @@ public class CadastroCampanhas extends javax.swing.JFrame {
      */
     public CadastroCampanhas() {
         initComponents();
+         setLocationRelativeTo(null);
+        
          jLabelMsgObrigatotioNome.setVisible(false);
          jLabelMsgObrigatotioPeriodo.setVisible(false);
          jLabelMsgObrigatotioLink.setVisible(false);
     }
      
     
-    CadastroPracas janela2 = new CadastroPracas ();
+    // CadastroPracas janela2 = new CadastroPracas ();
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,6 +94,12 @@ public class CadastroCampanhas extends javax.swing.JFrame {
 
         jLabel3.setText("<html>Periodo em dias<font color=\"red\">*</font>");
 
+        txtPeriodo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPeriodoKeyReleased(evt);
+            }
+        });
+
         jLabel4.setText("Selecione uma praça");
 
         tabSlcPraca.setModel(new javax.swing.table.DefaultTableModel(
@@ -123,8 +131,18 @@ public class CadastroCampanhas extends javax.swing.JFrame {
         });
 
         btLimpar.setText("Limpar");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimparActionPerformed(evt);
+            }
+        });
 
         btVoltar.setText("Voltar");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
 
         jLabelMsgObrigatotioNome.setForeground(new java.awt.Color(255, 0, 0));
         jLabelMsgObrigatotioNome.setText("Campo Obrigatório");
@@ -254,9 +272,7 @@ public class CadastroCampanhas extends javax.swing.JFrame {
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         
-        
-         
-         if (txtNome.getText().length()>0) {
+           if (txtNome.getText().length()>0) {
             jLabelMsgObrigatotioNome.setVisible(false);
         } else {
              jLabelMsgObrigatotioNome.setVisible(true);
@@ -289,6 +305,7 @@ public class CadastroCampanhas extends javax.swing.JFrame {
          }
          */
         
+         /*
         if(!txtNome.getText().isEmpty()){
         
         if(janela2==null){
@@ -304,14 +321,34 @@ public class CadastroCampanhas extends javax.swing.JFrame {
         
         janela2.enviar(this, txtNome.getText());
     }
-        
+     */ 
         
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void btNovaPracaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovaPracaActionPerformed
-SelecionarPraca frame = new SelecionarPraca();
-frame.setVisible(true);
+     
+     SelecionarPraca frame = new SelecionarPraca();
+     frame.setVisible(true);
     }//GEN-LAST:event_btNovaPracaActionPerformed
+
+    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
+        
+           txtNome.setText("");
+           txtPeriodo.setText("");
+           textAreaDescrição.setText("");
+           txtLink.setText("");
+    }//GEN-LAST:event_btLimparActionPerformed
+
+    private void txtPeriodoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPeriodoKeyReleased
+        
+        txtPeriodo.setText(txtPeriodo.getText().replaceAll("[^0-9]",""));
+    }//GEN-LAST:event_txtPeriodoKeyReleased
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+this.dispose();        
+        
+                  
+    }//GEN-LAST:event_btVoltarActionPerformed
 
     /**
      * @param args the command line arguments

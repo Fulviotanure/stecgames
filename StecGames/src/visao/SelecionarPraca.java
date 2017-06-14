@@ -16,6 +16,7 @@ public class SelecionarPraca extends javax.swing.JFrame {
      */
     public SelecionarPraca() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -95,7 +96,7 @@ frame.setVisible(true);
     }//GEN-LAST:event_btSelecionarActionPerformed
 
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
-
+this.dispose();
     }//GEN-LAST:event_btCancelarActionPerformed
 
     /**

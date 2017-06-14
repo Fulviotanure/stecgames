@@ -16,6 +16,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -39,7 +40,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Marketing");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 13, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         btNewCamp.setText("<html>Cadastrar novas <br>Campanhas</html>");
         btNewCamp.addActionListener(new java.awt.event.ActionListener() {
@@ -47,7 +48,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 btNewCampActionPerformed(evt);
             }
         });
-        getContentPane().add(btNewCamp, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 58, -1, 55));
+        getContentPane().add(btNewCamp, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, 55));
 
         btNewPraca.setText("<html>Cadastrar novas <br>praças</html>");
         btNewPraca.addActionListener(new java.awt.event.ActionListener() {
@@ -55,7 +56,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 btNewPracaActionPerformed(evt);
             }
         });
-        getContentPane().add(btNewPraca, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 58, -1, 55));
+        getContentPane().add(btNewPraca, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 120, 55));
 
         btEdtExcCamp.setText("<html>Editar/excluir Campanhas</html>");
         btEdtExcCamp.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +64,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 btEdtExcCampActionPerformed(evt);
             }
         });
-        getContentPane().add(btEdtExcCamp, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 120, 125, 50));
+        getContentPane().add(btEdtExcCamp, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 110, 50));
 
         btEdtExcPracas.setText("<html>Editar/excluir Praças</html>");
         btEdtExcPracas.addActionListener(new java.awt.event.ActionListener() {
@@ -71,10 +72,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 btEdtExcPracasActionPerformed(evt);
             }
         });
-        getContentPane().add(btEdtExcPracas, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 120, 125, 50));
+        getContentPane().add(btEdtExcPracas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 120, 50));
 
         btFechar.setText("<html>fechar</html>");
-        getContentPane().add(btFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 208, -1, -1));
+        btFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFecharActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -97,6 +103,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
      EditarPracas frame = new EditarPracas(); frame.setVisible(true);   // TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_btEdtExcPracasActionPerformed
+
+    private void btFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFecharActionPerformed
+    this.dispose();
+        
+    }//GEN-LAST:event_btFecharActionPerformed
 
     /**
      * @param args the command line arguments

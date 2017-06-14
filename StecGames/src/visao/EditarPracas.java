@@ -19,6 +19,7 @@ public class EditarPracas extends javax.swing.JFrame {
      */
     public EditarPracas() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -112,15 +113,13 @@ public class EditarPracas extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(118, 118, 118)
-                                .addComponent(btExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(btExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)
+                                .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,10 +135,9 @@ public class EditarPracas extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btEditar)
-                    .addComponent(btExcluir))
-                .addGap(18, 18, 18)
-                .addComponent(btVoltar)
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(btExcluir)
+                    .addComponent(btVoltar))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
@@ -153,7 +151,7 @@ public class EditarPracas extends javax.swing.JFrame {
 CadastroPracas frame = new CadastroPracas(); frame.setVisible(true);    }//GEN-LAST:event_btEditarActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-  EditarPracas frame = new EditarPracas(); frame.dispose();
+this.dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     /**
